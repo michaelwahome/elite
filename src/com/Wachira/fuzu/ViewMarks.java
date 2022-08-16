@@ -69,7 +69,7 @@ public class ViewMarks extends JFrame{
         DefaultTable.addColumn("Total Fees");
         DefaultTable.addColumn("Amount Paid");
         try{
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/fuzu","wahome","mw@home02");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/elite","wahome","mw@home02");
             String s6 = "SELECT * FROM tbl_students WHERE parentUsername = ?";
             PreparedStatement ps6 = connection.prepareStatement(s6);
             ps6.setString(1, username);
@@ -102,7 +102,7 @@ public class ViewMarks extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/fuzu", "wahome", "mw@home02");
+                    Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/elite", "wahome", "mw@home02");
                     String s2 = "SELECT * FROM tbl_students WHERE parentUsername = ? AND admissionNo = ?";
                     PreparedStatement ps2 = connection.prepareStatement(s2);
                     ps2.setString(1, txtUsername.getText());
@@ -193,7 +193,7 @@ public class ViewMarks extends JFrame{
             public void focusLost(FocusEvent e) {
                 super.focusLost(e);
                 try{
-                    Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/fuzu","wahome","mw@home02");
+                    Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/elite","wahome","mw@home02");
                     String s = "SELECT * FROM tbl_students WHERE parentUsername = ?";
                     PreparedStatement ps = connection.prepareStatement(s);
                     ps.setString(1, txtUsername.getText());

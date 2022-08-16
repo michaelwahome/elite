@@ -60,7 +60,7 @@ public class ParentRegistration extends JFrame{
                         JOptionPane.YES_NO_OPTION);
                 if (confirmed == JOptionPane.YES_OPTION) {
                     try {
-                        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/fuzu", "wahome", "mw@home02");
+                        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/elite", "wahome", "mw@home02");
                         String s3 = "SELECT * FROM tbl_students WHERE admissionNo = ?";
                         PreparedStatement ps3 = connection.prepareStatement(s3);
                         ps3.setInt(1, Integer.parseInt(txtAdmNo.getText()));
@@ -121,7 +121,7 @@ public class ParentRegistration extends JFrame{
             public void focusLost(FocusEvent e) {
                 super.focusLost(e);
                 try{
-                    Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/fuzu","wahome","mw@home02");
+                    Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/elite","wahome","mw@home02");
                     String s = "SELECT * FROM tbl_parents WHERE username = ?";
                     PreparedStatement ps = connection.prepareStatement(s);
                     ps.setString(1, txtUsername.getText());

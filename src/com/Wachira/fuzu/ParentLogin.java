@@ -42,7 +42,7 @@ public class ParentLogin extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 try{
-                    Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/fuzu","wahome","mw@home02");
+                    Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/elite","wahome","mw@home02");
                     String s = "SELECT * FROM tbl_parents WHERE username = ? AND password = ?";
                     PreparedStatement ps = connection.prepareStatement(s);
                     ps.setString(1, txtUsername.getText());
@@ -78,7 +78,7 @@ public class ParentLogin extends JFrame{
             public void focusLost(FocusEvent e) {
                 super.focusLost(e);
                 try{
-                    Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/fuzu","wahome","mw@home02");
+                    Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/elite","wahome","mw@home02");
                     String s = "SELECT * FROM tbl_parents WHERE username = ?";
                     PreparedStatement ps = connection.prepareStatement(s);
                     ps.setString(1, txtUsername.getText());

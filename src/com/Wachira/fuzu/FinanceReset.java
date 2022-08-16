@@ -56,7 +56,7 @@ public class FinanceReset extends JFrame {
                         JOptionPane.YES_NO_OPTION);
                 if (confirmed == JOptionPane.YES_OPTION) {
                     try{
-                        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/fuzu", "wahome", "mw@home02");
+                        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/elite", "wahome", "mw@home02");
                         String s3 = "SELECT * FROM tbl_finance WHERE username = ?";
                         PreparedStatement ps3 = connection.prepareStatement(s3);
                         ps3.setString(1, txtUsername.getText());

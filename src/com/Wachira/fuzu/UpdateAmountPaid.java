@@ -44,7 +44,7 @@ public class UpdateAmountPaid extends JFrame{
         DefaultTable.addColumn("Last Name");
         DefaultTable.addColumn("Amount Paid");
         try{
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/fuzu","wahome","mw@home02");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/elite","wahome","mw@home02");
             String s6 = "SELECT * FROM tbl_students";
             PreparedStatement ps6 = connection.prepareStatement(s6);
             ResultSet rs6 = ps6.executeQuery();
@@ -76,7 +76,7 @@ public class UpdateAmountPaid extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 try{
-                    Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/fuzu","wahome","mw@home02");
+                    Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/elite","wahome","mw@home02");
                     String s1 = "SELECT * FROM tbl_students WHERE admissionNo = ? AND fName = ?";
                     PreparedStatement ps1 = connection.prepareStatement(s1);
                     ps1.setInt(1, Integer.parseInt(txtAdmNo.getText()));
@@ -120,7 +120,7 @@ public class UpdateAmountPaid extends JFrame{
             public void focusLost(FocusEvent e) {
                 super.focusLost(e);
                 try{
-                    Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/fuzu","wahome","mw@home02");
+                    Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/elite","wahome","mw@home02");
                     String s = "SELECT * FROM tbl_students WHERE admissionNo = ?";
                     PreparedStatement ps = connection.prepareStatement(s);
                     ps.setInt(1, Integer.parseInt(txtAdmNo.getText()));

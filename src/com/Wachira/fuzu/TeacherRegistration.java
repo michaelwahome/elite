@@ -54,7 +54,7 @@ public class TeacherRegistration extends JFrame{
                         JOptionPane.YES_NO_OPTION);
                 if (confirmed == JOptionPane.YES_OPTION) {
                     try {
-                        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/fuzu", "wahome", "mw@home02");
+                        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/elite", "wahome", "mw@home02");
                         String s = "INSERT INTO tbl_teachers(username,fName,lName,password,phoneNo) VALUES(?,?,?,?,?)";
                         PreparedStatement ps = connection.prepareStatement(s);
                         ps.setString(1, txtUsername.getText());
@@ -95,7 +95,7 @@ public class TeacherRegistration extends JFrame{
             public void focusLost(FocusEvent e) {
                 super.focusLost(e);
                 try{
-                    Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/fuzu","wahome","mw@home02");
+                    Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/elite","wahome","mw@home02");
                     String s = "SELECT * FROM tbl_teachers WHERE username = ?";
                     PreparedStatement ps = connection.prepareStatement(s);
                     ps.setString(1, txtUsername.getText());

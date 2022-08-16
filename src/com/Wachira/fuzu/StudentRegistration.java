@@ -48,7 +48,7 @@ public class StudentRegistration extends JFrame{
         DefaultTable.addColumn("First Name");
         DefaultTable.addColumn("Last Name");
         try{
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/fuzu","wahome","mw@home02");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/elite","wahome","mw@home02");
             String s6 = "SELECT * FROM tbl_students WHERE parentUsername = ?";
             PreparedStatement ps6 = connection.prepareStatement(s6);
             ps6.setString(1, username);
@@ -85,7 +85,7 @@ public class StudentRegistration extends JFrame{
                         JOptionPane.YES_NO_OPTION);
                 if (confirmed == JOptionPane.YES_OPTION) {
                     try {
-                        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/fuzu", "wahome", "mw@home02");
+                        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/elite", "wahome", "mw@home02");
                         String s1 = "SELECT * FROM tbl_parents WHERE username = ?";
                         PreparedStatement ps1 = connection.prepareStatement(s1);
                         ps1.setString(1, txtUsername.getText());
